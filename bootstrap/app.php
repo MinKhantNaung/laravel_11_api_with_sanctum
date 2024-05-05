@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->statefulApi(); // then run for publish cors - php artisan config:publish cors // need in laravel 11 / no need in laravel 10 , 9
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
